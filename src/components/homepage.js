@@ -15,13 +15,22 @@ export default function Homepage(props) {
     }})
 
     return (
-        <div>
-            <ul>
+        <div id='homepage'>
+              
                {articles ? articles.map((article) => 
-                <li key={uniqid()}><Link to={article.url}>{article.title}</Link></li>
+
+            
+               <div className='articleLink'>
+                   <p className='date'>{article.date.split('T')[0]}</p>
+                   <Link key={uniqid()} to={article.url} className='articleLink'>{article.title}</Link>
+                    <p className='articlePreview'>{article.body.slice(0,150)}...</p>
+               </div>
+               
+               
+               
+               
                ) :
                 'Loading articles'}
-            </ul>
         </div>
     )
 }

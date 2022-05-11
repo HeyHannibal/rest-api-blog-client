@@ -21,7 +21,8 @@ export default function ArticlePage() {
         <div>
             {article ?
                 <div>
-                    <h1>{article.article.title}</h1>
+                    
+                    <h2>{article.article.title}</h2>
                     <p>{article.article.body}</p>
                     <PostComment articleId={articleId} />
                     {article.comments.map(comment =>
