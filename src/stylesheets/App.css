@@ -33,32 +33,30 @@ h1#title {
 
 
 p.date {
-  margin: 1rem 0 0 0;
+  margin: 2rem 0 0 0;
 
 }
 
 div.articleLink {
   margin: 0;
   text-align: start;
-  border-bottom: 1px solid rgb(145, 145, 145);
+  /* overflow: hidden; */
 }
 
 div.articleLink:last-child {
   border-bottom: none;
 }
 
+p.textbite {
+  margin: 0;
+}
+
 a.articleLink {
   text-decoration: none;
-  color: black;
+  color: #181818;
   font-size: 2rem;
   font-weight: 600;
-
 }
-
-p.articlePreview {
-  margin: 0.8rem 0;
-}
-
 
 
 
