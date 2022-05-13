@@ -6,7 +6,7 @@ function AppBackground() {
     const [scroll, setScroll] = useState(0);
 
     function logScroll() {
-        setScroll(window.pageYOffset);
+        setScroll(window.pageYOffset /2 );
     }
 
     useEffect(() => {

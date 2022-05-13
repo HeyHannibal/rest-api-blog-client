@@ -7,7 +7,74 @@
   margin: 0;
   overflow-y: hidden;
   box-sizing: border-box;
+}
 
+nav {
+  margin: 4rem;
+  display: flex;
+  width: 50vw;
+  min-width: 28rem;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  border-bottom: 3px solid #afb3bb;
+  color: rgb(166, 143, 175);
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+nav a:visited {
+  color: rgb(136, 129, 139);
+}
+
+nav a:hover {
+  text-decoration: none;
+  border-bottom: 3px solid #f54644;
+  color: #f54644;
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+
+
+#gitIcon {
+  border-bottom: none;
+  background: radial-gradient(ellipse at center top, rgb(224, 229, 239) 0%, rgb(148, 183, 233) 100%);
+  border-radius: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+  width: 3rem;
+  height: 3rem;
+}
+#gitIcon a{
+  text-decoration: none;
+  border-bottom: none;
+
+}
+#gitIcon img {
+  opacity: 0.5;
+  height: 3rem;
+  border-bottom: none;
+  margin: 4px 0 0px 3px;
+}
+
+#gitIcon:hover {
+  border-bottom: none;
+  background: linear-gradient(90deg, rgb(135, 63, 217, .8) 0%, rgba(245, 70, 68, 1) 100%);
+  border-radius: 100px;
+  display: flex;
+
+}
+
+#gitIcon img:hover {
+  opacity: 0.8;
+  height: 3rem;
 }
 
 h1 {
@@ -17,20 +84,21 @@ h1 {
   font-size: 4rem;
 }
 
-h1#title {
 
+h1#title {
   background: rgb(136, 63, 217);
-  background: linear-gradient(90deg, rgba(136, 63, 217, 1) 0%, rgba(184, 70, 132, 1) 49%, rgba(245, 70, 68, 1) 100%);
+  background: linear-gradient(90deg, rgb(135, 63, 217, 1) 0%, rgba(184, 70, 132, 1) 49%, rgba(245, 70, 68, 1) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 5rem;
 }
 
 
 #homepage {
-  width: 50vh;
+  width: 60vh;
+  margin-bottom: 15rem;
 }
-
 
 p.date {
   margin: 2rem 0 0 0;
@@ -40,7 +108,6 @@ p.date {
 div.articleLink {
   margin: 0;
   text-align: start;
-  /* overflow: hidden; */
 }
 
 div.articleLink:last-child {
@@ -48,7 +115,7 @@ div.articleLink:last-child {
 }
 
 p.textbite {
-  margin: 0;
+  margin: 1rem 0 0 0;
 }
 
 a.articleLink {
@@ -56,29 +123,5 @@ a.articleLink {
   color: #181818;
   font-size: 2rem;
   font-weight: 600;
+  line-height: 3rem;
 }
-
-
-
-/* @keyframes float {
-  0% {
-    left: -40px;
-    top:-40px;
-  }
-  50% {
-    left: -50px;
-    top: -50px;
-  }
-}
-
-@keyframes float2 {
-  0% {
-    left: -80px;
-    top:-80px;
-  }
-  50% {
-    left: -20px;
-    top: -20x;
-  }
-
-} */
