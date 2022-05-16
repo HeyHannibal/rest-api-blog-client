@@ -1,3 +1,33 @@
+#homepage {
+  max-width: 80vw;
+  width: fit-content;
+  margin-bottom: 15rem;
+}
+
+p.date {
+  margin: 2rem 0 0 0;
+}
+
+div.articleLink {
+  margin: 0;
+  text-align: start;
+}
+
+div.articleLink:last-child {
+  border-bottom: none;
+}
+
+p.textbite {
+  margin: 1rem 0 0 0;
+}
+
+a.articleLink {
+  text-decoration: none;
+  color: #181818;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
 p.textbite {
   margin: 0;
 }

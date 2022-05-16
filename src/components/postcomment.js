@@ -34,17 +34,17 @@ export default function PostComment(props) {
 
 
     return (
-        <form onSubmit={post}>
+        <form onSubmit={post} id='comment'>
             {errorMessage ? <p>{errorMessage}</p> : null}
             <label htmlFor='username'>
-                Username
+                <p>Username</p>
                 <input type='text' name='username' value={inputUsername} onChange={usernameChange}></input>
             </label>
             <label htmlFor='body'>
-                Comment
+                <p>Comment</p>
                 <textarea name='body' value={inputCommentBody} onChange={commentBodyChange}></textarea>
             </label>
-            <button type='submit'>Post Comment</button>
+            <button type='submit'>Post</button>
         </form>
     )
 }

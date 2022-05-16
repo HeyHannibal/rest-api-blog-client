@@ -10,40 +10,45 @@
 }
 
 nav {
-  margin: 4rem;
+  margin: 4rem 0;
   display: flex;
-  width: 50vw;
-  min-width: 28rem;
+  min-width: 50vw;
+  max-width: 80vw;
   justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 nav a {
   text-decoration: none;
-  border-bottom: 3px solid #afb3bb;
-  color: rgb(166, 143, 175);
-  margin: 0 1rem;
+  color: rgb(113, 109, 114);
   font-size: 1.3rem;
   font-weight: 600;
+  box-sizing: border-box;
 }
 
 nav a:visited {
-  color: rgb(136, 129, 139);
+  color: rgb(113, 109, 114);
 }
 
 nav a:hover {
-  text-decoration: none;
-  border-bottom: 3px solid #f54644;
   color: #f54644;
-  margin: 0 1rem;
-  font-size: 1.3rem;
-  font-weight: 600;
 }
-
-
+div.links {
+  display: flex;
+  justify-content: space-around;
+  max-width: 60vw;
+  width: fit-content;
+  gap: 1rem;
+}
 
 #gitIcon {
   border-bottom: none;
-  background: radial-gradient(ellipse at center top, rgb(224, 229, 239) 0%, rgb(148, 183, 233) 100%);
+  background: radial-gradient(
+    ellipse at center top,
+    rgb(224, 229, 239) 0%,
+    rgb(148, 183, 233) 100%
+  );
   border-radius: 150px;
   display: flex;
   align-items: center;
@@ -52,29 +57,26 @@ nav a:hover {
   width: 3rem;
   height: 3rem;
 }
-#gitIcon a{
+#gitIcon a {
   text-decoration: none;
   border-bottom: none;
-
 }
 #gitIcon img {
   opacity: 0.5;
   height: 3rem;
   border-bottom: none;
-  margin: 4px 0 0px 3px;
+  margin: 10px 0 0 0;
 }
 
 #gitIcon:hover {
   border-bottom: none;
-  background: linear-gradient(90deg, rgb(135, 63, 217, .8) 0%, rgba(245, 70, 68, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(135, 63, 217, 0.8) 0%,
+    rgba(245, 70, 68, 1) 100%
+  );
   border-radius: 100px;
   display: flex;
-
-}
-
-#gitIcon img:hover {
-  opacity: 0.8;
-  height: 3rem;
 }
 
 h1 {
@@ -84,44 +86,27 @@ h1 {
   font-size: 4rem;
 }
 
-
 h1#title {
   background: rgb(136, 63, 217);
-  background: linear-gradient(90deg, rgb(135, 63, 217, 1) 0%, rgba(184, 70, 132, 1) 49%, rgba(245, 70, 68, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(135, 63, 217, 1) 0%,
+    rgba(184, 70, 132, 1) 49%,
+    rgba(245, 70, 68, 1) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 5rem;
+  margin: 0rem 2rem;
+  max-width: 100%;
+  height: fit-content;
+  white-space: nowrap;
+  flex-shrink: 6;
 }
 
-
-#homepage {
-  width: 60vh;
-  margin-bottom: 15rem;
-}
-
-p.date {
-  margin: 2rem 0 0 0;
-
-}
-
-div.articleLink {
-  margin: 0;
-  text-align: start;
-}
-
-div.articleLink:last-child {
-  border-bottom: none;
-}
-
-p.textbite {
-  margin: 1rem 0 0 0;
-}
-
-a.articleLink {
-  text-decoration: none;
-  color: #181818;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 3rem;
+@media only screen and (max-width: 840px) {
+  h1#title {
+    font-size: 4rem;
+  }
 }

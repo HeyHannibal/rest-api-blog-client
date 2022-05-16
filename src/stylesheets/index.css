@@ -5,6 +5,7 @@ body {
   font-family: 'Catamaran';
   color: rgb(41, 41, 41);
   background-color: rgba(237, 226, 240, 0.527);
+  overflow-y: scroll;
 }
 
 
