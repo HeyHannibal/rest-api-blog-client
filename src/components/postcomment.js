@@ -1,50 +1,71 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from "react";
 
 export default function PostComment(props) {
+  const [comment, setComment] = useState({
+    username: "",
+    body: "",
+  });
 
-    const [inputUsername, setInputUsername] = useState('')
-    const [inputCommentBody, setInputCommentBody] = useState('')
-    const usernameChange = (event) => setInputUsername(event.target.value)
-    const commentBodyChange = (event) => setInputCommentBody(event.target.value)
+  function updateComment(e) {
 
-    const [errorMessage, setErrorMessage] = useState(false)
+    const { value } = e.currentTarget
+    console.log(value);
+    setComment((prev) => ({
+      ...prev,
+       [e.target.id]: value,
+    }));
+  }
 
-    async function post(e) {
-        e.preventDefault();
+  const [errorMessage, setErrorMessage] = useState(false);
 
-        try {
-            let res = await fetch(`http://localhost:3001/article/${props.articleId}/comment/`, {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: inputUsername,
-                    body: inputCommentBody,
-                }),
-            })
-            if (res.status === 200) {
-                window.location.reload()      
-                  } else setErrorMessage(`An error has occured, please try again - ${res.status}`)
-        } catch (err) {
-            console.log(err)
+  async function post(e) {
+    e.preventDefault();
+    try {
+      let res = await fetch(
+        `http://localhost:3001/article/${props.articleId}/comment/`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(comment),
         }
+      );
+      if (res.status === 200) {
+        props.refreshArticle()
+      } else
+        setErrorMessage(
+          `An error has occured, please try again - ${res.status}`
+        );
+    } catch (err) {
+      console.log(err);
     }
+  }
 
 
-    return (
-        <form onSubmit={post} id='comment'>
-            {errorMessage ? <p>{errorMessage}</p> : null}
-            <label htmlFor='username'>
-                <p>Username</p>
-                <input type='text' name='username' value={inputUsername} onChange={usernameChange}></input>
-            </label>
-            <label htmlFor='body'>
-                <p>Comment</p>
-                <textarea name='body' value={inputCommentBody} onChange={commentBodyChange}></textarea>
-            </label>
-            <button type='submit'>Post</button>
-        </form>
-    )
+
+  return (
+    <form onSubmit={post} id="comment">
+      {errorMessage ? <p>{errorMessage}</p> : null}
+      <label htmlFor="username">
+        <p>Username</p>
+        <input
+          type="text"
+          id="username"
+          value={comment.username}
+          onChange={updateComment}
+        ></input>
+      </label>
+      <label htmlFor="body">
+        <p>Comment</p>
+        <textarea
+          id="body"
+          value={comment.body}
+          onChange={updateComment}
+        ></textarea>
+      </label>
+      <button type="submit">Post</button>
+    </form>
+  );
 }

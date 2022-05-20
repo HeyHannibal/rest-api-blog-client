@@ -3,23 +3,23 @@ import uniqid from "uniqid";
 import { Link } from "react-router-dom";
 import "../stylesheets/homepage.css";
 
-export default function Homepage(props) {
+export default function Homepage() {
   const [articles, setArticles] = useState(false);
 
   useEffect(() => {
     if (!articles) {
       fetch("http://localhost:3001/article")
         .then((result) => result.json())
-        .then((result) => setArticles(JSON.parse(result)));
+        .then((result) => setArticles(result));
     }
   });
 
   function slideDown(event) {
-    event.currentTarget.lastChild.classList.replace("hidden", "shown");
+    event.currentTarget.lastChild.classList.toggle("shown");
     event.currentTarget.lastChild.firstChild.classList.toggle("shown");
   }
   function slideUp(event) {
-    event.currentTarget.lastChild.classList.replace("shown", "hidden");
+    event.currentTarget.lastChild.classList.toggle("shown");
     event.currentTarget.lastChild.firstChild.classList.toggle("shown");
   }
   return (
@@ -30,6 +30,7 @@ export default function Homepage(props) {
               className="articleLink"
               onMouseEnter={slideDown}
               onMouseLeave={slideUp}
+              key={uniqid()}
             >
               <p className="date">{article.date.split("T")[0]}</p>
               <Link key={uniqid()} to={article.url} className="articleLink">

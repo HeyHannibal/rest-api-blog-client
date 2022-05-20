@@ -25,9 +25,7 @@ function AppBackground() {
           <div className="cloud" id="one"></div>
           <div className="cloud" id="two"></div>
           <div className="cloud" id="three"></div>
-
           <div id="backgroundLeft"></div>
-
           <div id="spheresLeft">
             <div className="sphere">
               <div
@@ -51,7 +49,6 @@ function AppBackground() {
                   </div>
         </div> */}
       </div>
-
     </div>
   );
 }
