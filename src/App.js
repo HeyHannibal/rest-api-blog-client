@@ -4,8 +4,10 @@ import { Outlet, Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import AppBackground from './components/app-background'
 import gitIcon from './icons/GitHub-Mark-Light-64px.png'
+import { isFirefox, isIE } from 'react-device-detect'
 
 function App() {
+ 
   return (
     <div className="App" >
       <nav >
@@ -19,8 +21,9 @@ function App() {
         </div>
       </nav>
       <h1 id='title'>The Blog</h1>
-      <AppBackground />
       <Outlet />
+    {(isFirefox || isIE) ?  null  :       <AppBackground />
+}
     </div>
   );
 }
