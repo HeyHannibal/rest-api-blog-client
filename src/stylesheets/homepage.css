@@ -41,17 +41,19 @@ a.articleLink {
   margin: -0.5rem 0;
   padding: 0;
   overflow: hidden;
+  transition: margin 0.3s ease;
 }
 .articleLink:hover div.articlePreview {
   margin: 0;
 }
 .articleLink:hover .hiddenText {
   top: 0;
-  margin-bottom: 1.5rem;
+  opacity: 1;
+  /* margin-bottom: 1.5rem; */
 }
 .hiddenText {
   position: relative;
-  transition: top 0.2s ease;
-  top: 5rem;
+  transition: top 0.3s ease,;
+  top: -5rem;
   margin: 0;
 }

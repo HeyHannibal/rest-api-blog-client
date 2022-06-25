@@ -5,6 +5,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  HashRouter,
 } from "react-router-dom";
 import App from "./App";
 import ArticlePage from './components/articlepage';
@@ -14,7 +15,7 @@ import './stylesheets/index.css';
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement)
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<App />} >
         <Route index element={<Homepage />} />
@@ -22,5 +23,5 @@ root.render(
 
       </Route>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );

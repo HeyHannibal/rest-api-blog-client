@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 import { Link } from "react-router-dom";
+import { formatDate } from "../App";
 import "../stylesheets/homepage.css";
+
+
 
 export default function Homepage() {
   const [articles, setArticles] = useState(false);
@@ -13,6 +16,7 @@ export default function Homepage() {
         .then((result) => setArticles(result));
     }
   });
+
 
   return (
     <div id="homepage">
@@ -28,9 +32,11 @@ export default function Homepage() {
             <p className="textbite">{article.body.split(".")[0]}.</p>
             <div className="articlePreview hidden">
               <p className="hiddenText">{article.body.slice(100, 200)}...</p>
+              <br></br>
+              
             </div>
-            <p className="date">{article.date.split("T")[0]}</p>
 
+            <p className="date">{formatDate(article.date.split("T")[0])}</p>
           </Link>
         ))
         : "Loading articles"}

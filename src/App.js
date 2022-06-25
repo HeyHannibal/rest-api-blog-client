@@ -1,4 +1,3 @@
-import Homepage from "./components/homepage";
 import "./stylesheets/App.css";
 import { Outlet, Link } from "react-router-dom";
 import React from "react";
@@ -6,13 +5,16 @@ import AppBackground from "./components/app-background";
 import gitIcon from "./icons/GitHub-Mark-Light-64px.png";
 import { isFirefox, isIE, isMobile } from "react-device-detect";
 
+
+
+
 function App() {
   return (
     <div className="App">
       <nav>
         <div id="gitIcon">
           <a href="https://github.com/HeyHannibal/">
-            <img href="#" src={gitIcon}></img>
+            <img  alt='github profile' src={gitIcon}></img>
           </a>
         </div>
         <div className="links">
@@ -30,4 +32,13 @@ function App() {
   );
 }
 
-export default App;
+const formatDate = (date) => {
+  const newDate = new Date(date)
+  const formatted = newDate.toLocaleString('default', {month:'short', year: 'numeric', day: 'numeric'})
+  return formatted
+} 
+export default App
+export {formatDate}
+
+
+
