@@ -18,9 +18,10 @@ nav {
   align-items: center;
   flex-shrink: 0;
 }
-
-nav a {
+a {
   text-decoration: none;
+}
+nav a {
   color: rgb(113, 109, 114);
   font-size: 1.3rem;
   font-weight: 600;
@@ -108,5 +109,8 @@ h1#title {
 @media only screen and (max-width: 840px) {
   h1#title {
     font-size: 4rem;
+  }
+  nav {
+    width: 100%;
   }
 }

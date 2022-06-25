@@ -37,17 +37,6 @@ function AppBackground() {
             <div className="sphere"></div>
           </div>
         </div>
-
-        {/* <div className="cloudsRight">
-            <div id='backgroundRight'></div>
-            <div className="cloud2" id="one"></div>
-            <div className="cloud2" id="two"></div>
-            <div className="cloud2" id="three"></div>
-            <div>
-            <div className="sphere2" id="one"></div>
-            <div className="sphere2" id="two"></div>
-                  </div>
-        </div> */}
       </div>
     </div>
   );

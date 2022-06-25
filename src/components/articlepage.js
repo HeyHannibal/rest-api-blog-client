@@ -19,7 +19,7 @@ export default function ArticlePage() {
   });
 
   return (
-    <div id="article">
+    <article id="article">
       {article ? (
         <div id="articleContainer">
           <h2>{article.article.title}</h2>
@@ -36,6 +36,6 @@ export default function ArticlePage() {
       ) : (
         "loading article..."
       )}
-    </div>
+    </article>
   );
 }

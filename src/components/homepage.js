@@ -14,34 +14,25 @@ export default function Homepage() {
     }
   });
 
-  function slideDown(event) {
-    event.currentTarget.lastChild.classList.toggle("shown");
-    event.currentTarget.lastChild.firstChild.classList.toggle("shown");
-  }
-  function slideUp(event) {
-    event.currentTarget.lastChild.classList.toggle("shown");
-    event.currentTarget.lastChild.firstChild.classList.toggle("shown");
-  }
   return (
     <div id="homepage">
       {articles
         ? articles.map((article) => (
-            <div
-              className="articleLink"
-              onMouseEnter={slideDown}
-              onMouseLeave={slideUp}
-              key={uniqid()}
-            >
-              <p className="date">{article.date.split("T")[0]}</p>
-              <Link key={uniqid()} to={article.url} className="articleLink">
-                {article.title}
-              </Link>
-              <p className="textbite">{article.body.split(".")[0]}.</p>
-              <div className="articlePreview hidden">
-                <p className="hiddenText">{article.body.slice(100, 200)}...</p>
-              </div>
+          <Link
+            className="articleLink"
+            key={uniqid()}
+            to={article.url}
+          >
+            <h2>{article.title}</h2>
+
+            <p className="textbite">{article.body.split(".")[0]}.</p>
+            <div className="articlePreview hidden">
+              <p className="hiddenText">{article.body.slice(100, 200)}...</p>
             </div>
-          ))
+            <p className="date">{article.date.split("T")[0]}</p>
+
+          </Link>
+        ))
         : "Loading articles"}
     </div>
   );

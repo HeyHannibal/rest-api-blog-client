@@ -2,70 +2,57 @@
   max-width: 80vw;
   width: fit-content;
   margin-bottom: 15rem;
+  display: flex;
+  flex-direction: column;
 }
-
 p.date {
   margin: 2rem 0 0 0;
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  font-family: "PT Sans";
+  font-weight: 100;
 }
-
-div.articleLink {
+.articleLink {
+  position: relative;
   margin: 0;
   text-align: start;
 }
-
-div.articleLink:last-child {
-  border-bottom: none;
-}
-
 p.textbite {
   margin: 1rem 0 0 0;
 }
-
-a.articleLink {
+.articleLink {
   text-decoration: none;
   color: #181818;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 3rem;
-}
-p.textbite {
-  margin: 0;
+  font-weight: 300;
 }
 
 a.articleLink {
   text-decoration: none;
   color: #181818;
-  font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
+  margin: 1rem;
 }
-
-div.articlePreview {
+.articlePreview {
   border-bottom: 1px solid rgb(145, 145, 145);
-
   margin: 0 0;
   transition: margin 0.2s ease;
   overflow: hidden;
-}
-
-div.articlePreview.hidden {
   position: relative;
-  margin: -1.8rem 0;
+  margin: -0.5rem 0;
   padding: 0;
   overflow: hidden;
 }
-
-div.articlePreview.shown {
+.articleLink:hover div.articlePreview {
   margin: 0;
 }
-
+.articleLink:hover .hiddenText {
+  top: 0;
+  margin-bottom: 1rem;
+}
 .hiddenText {
   position: relative;
   transition: top 0.2s ease;
   top: 5rem;
   margin: 0;
-}
-
-.hiddenText.shown {
-  top: 0;
-  margin-bottom: 1rem;
 }

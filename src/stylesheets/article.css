@@ -1,4 +1,4 @@
-#article {
+article {
   display: flex;
   flex-direction: row;
   overflow-y: hidden;
@@ -42,7 +42,7 @@ form#comment {
   flex-direction: column;
   width: 50%;
 }
-form#comment input,textarea{
+form#comment input,
+textarea {
   width: 100%;
 }
-
