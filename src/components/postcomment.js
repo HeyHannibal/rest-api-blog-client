@@ -7,12 +7,10 @@ export default function PostComment(props) {
   });
 
   function updateComment(e) {
-
     const { value } = e.currentTarget
-    console.log(value);
     setComment((prev) => ({
       ...prev,
-       [e.target.id]: value,
+      [e.target.id]: value,
     }));
   }
 
@@ -49,22 +47,23 @@ export default function PostComment(props) {
     <form onSubmit={post} id="comment">
       {errorMessage ? <p>{errorMessage}</p> : null}
       <label htmlFor="username">
-        <p>Username</p>
-        <input
-          type="text"
-          id="username"
-          value={comment.username}
-          onChange={updateComment}
-        ></input>
+        Username
       </label>
+      <input
+        type="text"
+        id="username"
+        value={comment.username}
+        onChange={updateComment}
+      ></input>
       <label htmlFor="body">
-        <p>Comment</p>
-        <textarea
-          id="body"
-          value={comment.body}
-          onChange={updateComment}
-        ></textarea>
+        Comment
       </label>
+      <textarea
+        id="body"
+        value={comment.body}
+        onChange={updateComment}
+      rows={3}
+    ></textarea>
       <button type="submit">Post</button>
     </form>
   );

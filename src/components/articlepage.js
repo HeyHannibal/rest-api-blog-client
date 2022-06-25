@@ -7,35 +7,42 @@ import "../stylesheets/article.css";
 export default function ArticlePage() {
   const { id } = useParams();
   const [article, setArticle] = useState(false);
-  
-  
+
+
 
   useEffect(() => {
-    if(!article) {
-    fetch(`http://localhost:3001/article/${id}/`)
-      .then((result) => result.json())
-      .then((result) => setArticle(result));
+    if (!article) {
+      fetch(`http://localhost:3001/article/${id}/`)
+        .then((result) => result.json())
+        .then((result) => setArticle(result));
     }
   });
 
   return (
-    <article id="article">
+    <main>
       {article ? (
-        <div id="articleContainer">
-          <h2>{article.article.title}</h2>
-          <p>{article.article.date.split("T")[0]}</p>
-          <p>{article.article.body}</p>
-          <PostComment articleId={id} refreshArticle={setArticle}/>
-          {article.comments.map((comment) => (
-            <div key={uniqid()}>
-              <h5>{comment.username}</h5>
-              <p>{comment.body}</p>
-            </div>
-          ))}
+        <div>
+          <article id="articleContainer">
+            <h2>{article.article.title}</h2>
+            <p>{article.article.date.split("T")[0]}</p>
+            <p>{article.article.body}</p>
+          </article>
+          <PostComment articleId={id} refreshArticle={setArticle} />
+          <section id='comments'>
+            {article.comments.map((comment) => (
+              <ul id='comments' key={uniqid()}>
+                <li>
+                  <h5>{comment.username}</h5>
+                  <p>{comment.body}</p>
+                </li>
+              </ul>
+            ))}
+          </section>
         </div>
+
       ) : (
         "loading article..."
       )}
-    </article>
-  );
+    </main>
+  )
 }

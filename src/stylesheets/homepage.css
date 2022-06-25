@@ -9,7 +9,7 @@ p.date {
   margin: 2rem 0 0 0;
   position: absolute;
   right: 0;
-  bottom: -1px;
+  bottom: -2px;
   font-family: "PT Sans";
   font-weight: 100;
 }
@@ -26,7 +26,6 @@ p.textbite {
   color: #181818;
   font-weight: 300;
 }
-
 a.articleLink {
   text-decoration: none;
   color: #181818;
@@ -48,7 +47,7 @@ a.articleLink {
 }
 .articleLink:hover .hiddenText {
   top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .hiddenText {
   position: relative;

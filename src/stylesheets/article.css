@@ -1,48 +1,134 @@
-article {
+main {
   display: flex;
   flex-direction: row;
   overflow-y: hidden;
+  margin: 5rem;
 }
-#articleContainer {
+article {
   max-width: 48rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-shrink: 6;
+  margin-bottom: 4rem;
 }
-#articleContainer h2 {
+article h2 {
   padding: 0;
   margin: 4rem 0 0 1rem;
   padding: 0;
 }
-#articleContainer p:first-of-type {
+article p:first-of-type {
   margin: 0rem 1rem;
 }
-#articleContainer p {
+article p {
   text-align: start;
   margin: 2rem 1rem;
 }
 @media only screen and (max-width: 768px) {
-  #articleContainer {
+  article {
     margin: 0.5rem;
-  }
-  #articleContainer h2 {
-    font-size: 1.5rem;
-    padding: 0;
-    margin: 4rem 0 0 1rem;
-  }
-  #articleContainer p {
-    font-size: 0.9rem;
+    max-width: none;
+    width: 90vw;
   }
 }
-form#comment {
-  align-self: center;
+form {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
+  position: relative;
 }
-form#comment input,
+form label {
+  margin: 1.5rem 0 0.4rem 0;
+  font-weight: 500;
+}
+form input {
+  height: 2rem;
+}
+form input,
 textarea {
   width: 100%;
+  border: 1px solid rgb(216, 204, 204);
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px -6px grey;
+  resize: vertical;
+  transition: box-shadow 0.2s ease;
+  padding-left: 1rem;
+  font-family: "PT Sans";
+  font-size: 1rem;
+}
+textarea {
+  padding: 1rem 0 5rem 1rem;
+  box-sizing: content-box;
+}
+form label {
+  align-self: start;
+}
+
+form input:focus,
+textarea:focus {
+  border: 2px solid rgb(122, 118, 118);
+  box-shadow: 1px 4px 15px -2px rgb(177, 177, 177);
+  outline: none;
+}
+
+form button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 2px 2rem;
+  border: none;
+  background: rgb(136, 63, 217);
+  background: linear-gradient(
+    90deg,
+    rgb(114, 54, 184) 0%,
+    rgb(172, 66, 124) 49%,
+    rgb(218, 65, 63) 100%
+  );
+  color: white;
+  font-family: "PT Sans";
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px -2px rgb(158, 158, 158);
+  transition: transform 0.1s ease;
+}
+form button:hover {
+  box-shadow: 2px 4px 4px -1px rgb(139, 139, 139);
+  transform: translateY(2px);
+}
+section#comments{
+  padding-top: 3rem;
+}
+ul#comments {
+  
+  margin: 2rem 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+ul#comments li {
+  text-align: start;
+  border-bottom: 1px solid  rgba(128, 128, 128, 0.568);
+  border-left: 1px solid  rgba(128, 128, 128, 0.377);
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fef9ff;
+}
+li h5 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(29, 121, 133);
+  letter-spacing: 2px;
+  margin: 1rem ;
+}
+li p {
+  margin-left: 1.5rem;
+  
 }
