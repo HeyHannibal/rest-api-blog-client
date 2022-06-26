@@ -20,7 +20,7 @@ export default function PostComment(props) {
     e.preventDefault();
     try {
       let res = await fetch(
-        `http://localhost:3001/article/${props.articleId}/comment/`,
+        `https://le-bloggo.herokuapp.com/article/${props.articleId}/comment/`,
         {
           method: "POST",
           headers: {

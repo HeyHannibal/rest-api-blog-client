@@ -11,7 +11,7 @@ export default function Homepage() {
 
   useEffect(() => {
     if (!articles) {
-      fetch("http://localhost:3001/article")
+      fetch("https://le-bloggo.herokuapp.com/article")
         .then((result) => result.json())
         .then((result) => setArticles(result));
     }

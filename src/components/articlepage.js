@@ -12,7 +12,7 @@ export default function ArticlePage() {
 
   useEffect(() => {
     if (!article) {
-      fetch(`http://localhost:3001/article/${id}/`)
+      fetch(`https://le-bloggo.herokuapp.com/article/${id}/`)
         .then((result) => result.json())
         .then((result) => setArticle(result));
     }
