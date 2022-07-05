@@ -13,7 +13,8 @@ export default function Homepage() {
     if (!articles) {
       fetch("https://le-bloggo.herokuapp.com/article")
         .then((result) => result.json())
-        .then((result) => setArticles(result));
+        .then((result) => setArticles(result))
+        .catch()
     }
   });
 
@@ -23,23 +24,23 @@ export default function Homepage() {
       {articles
         ? articles.map((article) => (
           <Link
-            className="articleLink"
+            
             key={uniqid()}
             to={article.url}
           >
-            <h2>{article.title}</h2>
-
-            <p className="textbite">{article.body.split(".")[0]}.</p>
-            <div className="articlePreview hidden">
-              <p className="hiddenText">{article.body.slice(100, 200)}...</p>
-              <br></br>
+            <article className="articleLink">
+              <h2>{article.title}</h2>
+              <p className="textbite">{article.body.split(".")[0]}.</p>
+              <div className="articlePreview hidden">
+                <p className="hiddenText">{article.body.slice(100, 200)}...</p>
+                <br></br>
               
-            </div>
-
-            <p className="date">{formatDate(article.date.split("T")[0])}</p>
+              </div>
+              <p className="date">{formatDate(article.date.split("T")[0])}</p>
+            </article>
           </Link>
         ))
-        : "Loading articles"}
+        : <p>Loading articles</p>}
     </div>
   );
 }

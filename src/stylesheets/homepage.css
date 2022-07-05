@@ -12,6 +12,7 @@ p.date {
   bottom: -2px;
   font-family: "PT Sans";
   font-weight: 100;
+  color: #474747;
 }
 .articleLink {
   position: relative;
@@ -26,7 +27,7 @@ p.textbite {
   color: #181818;
   font-weight: 300;
 }
-a.articleLink {
+.articleLink {
   text-decoration: none;
   color: #181818;
   font-weight: 400;
